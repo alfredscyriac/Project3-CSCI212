@@ -1,9 +1,17 @@
-public class Appliance {
-    private String serialNumber; 
+import java.util.regex.Pattern;
 
-    public Appliance (String serialNumber) {  
+public class Appliance {
+    public Appliance(String serialNumber) throws IllegalApplianceException{
+        if (!isValid(serialNumber)) {
+            throw new IllegalApplianceException("Invalid serial number: " + serialNumber);
+        }
         this.serialNumber = serialNumber;
     }
+    public static boolean isValid(String serialNumber) {
+        return Pattern.matches("^[RDW][A-Z0-9]{11}$", serialNumber);
+    }
+    
+    private String serialNumber; 
 
     public String getSerialNumber () {  
         return serialNumber;
@@ -28,5 +36,4 @@ public class Appliance {
     public boolean equals (Appliance other) {
         return this.serialNumber.equals(other.serialNumber); // boolean to check if two serial numbers are equal, passing the compared serial number as a parameter
     }
-    
 }
