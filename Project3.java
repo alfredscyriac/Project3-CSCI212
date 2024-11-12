@@ -3,9 +3,8 @@ public class Project3{
         SortedApplianceList refrigerators = new SortedApplianceList();
         SortedApplianceList dishwashers = new SortedApplianceList();
         SortedApplianceList microwaves = new SortedApplianceList();
-        TextFileInput fileInput = new TextFileInput("p2input.txt");
         String line;
-        while ((line = fileInput.readLine()) != null) {
+        while () {
             String[] parts = line.split(",");
             String serial = parts[0];
             double price = Double.parseDouble(parts[1]);
@@ -22,7 +21,6 @@ public class Project3{
                 dishwashers.add(new Dishwasher(serial, price, undercounterInstallation));
             }
         }
-        fileInput.close();
         new ApplianceGUI(refrigerators, dishwashers, microwaves);
         
     }
