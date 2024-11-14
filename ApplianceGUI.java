@@ -3,10 +3,10 @@ import java.awt.*;
 
 public class ApplianceGUI {
         public ApplianceGUI(SortedApplianceList refrigerators, SortedApplianceList dishwashers, SortedApplianceList microwaves){
-        JFrame frame = new JFrame(); // Create our GUI
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // Close the program when the window is closed.
-        frame.setLayout(new GridLayout(1, 3)); // Creates 3 sections/columns for refrigerators, dishwashers, microwave
-        frame.setTitle("Project 2 - Appliance List w Linked Lists"); 
+        JFrame frame = new JFrame(); 
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
+        frame.setLayout(new GridLayout(1, 3)); 
+        frame.setTitle("Project 3 - Appliance List w Modified GUI and Exception for Illegal Appliances"); 
 
         JTextArea fridgeArea = new JTextArea();
         ApplianceNode current = refrigerators.head.next;
