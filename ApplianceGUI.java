@@ -8,6 +8,9 @@ public class ApplianceGUI {
         frame.setLayout(new GridLayout(1, 3)); 
         frame.setTitle("Project 3 - Appliance List w Modified GUI and Exception for Illegal Appliances"); 
 
+        JMenuBar menuBar = new JMenuBar();
+        JMenu fileMenu = new JMenu("File"); 
+        
         JTextArea fridgeArea = new JTextArea();
         ApplianceNode current = refrigerators.head.next;
         while (current != null){
