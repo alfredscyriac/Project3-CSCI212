@@ -2,6 +2,12 @@ import javax.swing.*;
 import java.awt.*;
 
 public class ApplianceGUI {
+    private SortedApplianceList refrigerators;
+    private SortedApplianceList dishwashers;
+    private SortedApplianceList microwaves;
+    private JTextArea fridgeArea;
+    private JTextArea dishWasherArea;
+    private JTextArea microwaveArea;
         public ApplianceGUI(SortedApplianceList refrigerators, SortedApplianceList dishwashers, SortedApplianceList microwaves){
         JFrame frame = new JFrame(); 
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
