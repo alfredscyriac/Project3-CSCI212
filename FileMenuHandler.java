@@ -79,6 +79,11 @@ private void updateDisplay(){
         fridgeArea.append(current.data.toString() + "\n");
         current = current.next;
     }
+    current = dishwashers.head.next;
+    while (current != null) {
+        dishWasherArea.append(current.data.toString() + "\n");
+        current = current.next;
+    }
     
 }
 
