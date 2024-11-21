@@ -73,7 +73,7 @@ public class FileMenuHandler implements ActionListener{
                         }
                     } 
                     else {
-                        System.out.println("Invalid appliance: Invalid serial number: " + serial);
+                        System.out.println("Invalid appliance serial number: " + serial);
                     }
                 }
                 fileInput.close();
