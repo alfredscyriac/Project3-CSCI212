@@ -74,6 +74,11 @@ private void updateDisplay(){
     fridgeArea.setText("");
     dishWasherArea.setText("");
     microwaveArea.setText("");
+    ApplianceNode current = refrigerators.head.next;
+    while (current != null) {
+        fridgeArea.append(current.data.toString() + "\n");
+        current = current.next;
+    }
     
 }
 
