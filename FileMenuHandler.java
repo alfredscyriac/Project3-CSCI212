@@ -30,7 +30,13 @@ public class FileMenuHandler implements ActionListener{
         }
     }
     private void openFile(){
-        
+        JFileChooser fileChooser = new JFileChooser();
+        int returnVal = fileChooser.showOpenDialog(frame);
+        if (returnVal == JFileChooser.APPROVE_OPTION) {
+            File file = fileChooser.getSelectedFile();
+            String filePath = file.getAbsolutePath();
+            System.out.println("File chosen: " + filePath);
+
     }
     
 }
