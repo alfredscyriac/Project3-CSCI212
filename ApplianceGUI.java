@@ -36,8 +36,15 @@ public class ApplianceGUI {
     private void createMenu(JFrame frame) {
         JMenuBar menuBar = new JMenuBar();
         JMenu fileMenu = new JMenu("File");
-
         JMenuItem openItem = new JMenuItem("Open");
         JMenuItem quitItem = new JMenuItem("Quit");
+        FileMenuHandler fmh = new FileMenuHandler(frame, refrigerators, dishwashers, microwaves, fridgeArea, dishWasherArea, microwaveArea);
+        openItem.addActionListener(fmh);
+        quitItem.addActionListener(fmh);
+        fileMenu.add(openItem);
+        fileMenu.addSeparator();
+        fileMenu.add(quitItem);
+        menuBar.add(fileMenu);
+        frame.setJMenuBar(menuBar);
     }  
 }
