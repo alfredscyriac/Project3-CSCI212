@@ -8,7 +8,7 @@ public class Appliance {
         this.serialNumber = serialNumber;
     }
     public static boolean isValid(String serialNumber) {
-        return Pattern.matches("^[RDW][A-Z0-9]{11}$", serialNumber);
+        return Pattern.matches("^[RDM][A-Z0-9]{11}$", serialNumber);
     }
     
     private String serialNumber; 
