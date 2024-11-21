@@ -34,6 +34,10 @@ public class ApplianceGUI {
         frame.setVisible(true);
     } 
     private void createMenu(JFrame frame) {
-        
+        JMenuBar menuBar = new JMenuBar();
+        JMenu fileMenu = new JMenu("File");
+
+        JMenuItem openItem = new JMenuItem("Open");
+        JMenuItem quitItem = new JMenuItem("Quit");
     }  
 }
