@@ -29,5 +29,8 @@ public class FileMenuHandler implements ActionListener{
             System.exit(0);
         }
     }
+    private void openFile(){
+        
+    }
     
 }
