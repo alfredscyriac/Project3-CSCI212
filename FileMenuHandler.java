@@ -68,6 +68,9 @@ public class FileMenuHandler implements ActionListener{
                 JOptionPane.showMessageDialog(frame, "Error reading file: " + ex.getMessage(), "File Error", JOptionPane.ERROR_MESSAGE);
             }
         }
-        refreshDisplay();
+        updateDisplay();
     }
+}
+private void updateDisplay(){
+    
 }
