@@ -21,5 +21,13 @@ public class FileMenuHandler implements ActionListener{
         this.dishWasherArea = dishWasherArea;
         this.microwaveArea = microwaveArea;
     }
+    public void actionPerformed(ActionEvent event) {
+        String command = event.getActionCommand();
+        if (command.equals("Open")) {
+            openFile();
+        } else if (command.equals("Quit")) {
+            System.exit(0);
+        }
+    }
     
 }
