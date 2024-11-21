@@ -36,6 +36,9 @@ public class FileMenuHandler implements ActionListener{
             File file = fileChooser.getSelectedFile();
             String filePath = file.getAbsolutePath();
             System.out.println("File chosen: " + filePath);
+            refrigerators.clear();
+            dishwashers.clear();
+            microwaves.clear();
 
     }
     

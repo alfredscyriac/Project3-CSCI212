@@ -16,4 +16,7 @@ public class SortedApplianceList extends ApplianceList{
         }
         length++;
     }
+    public void clear() {
+        head.next = null;
+    }
 }
