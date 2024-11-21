@@ -70,7 +70,11 @@ public class FileMenuHandler implements ActionListener{
         }
         updateDisplay();
     }
-}
 private void updateDisplay(){
+    fridgeArea.setText("");
+    dishWasherArea.setText("");
+    microwaveArea.setText("");
     
+}
+
 }
