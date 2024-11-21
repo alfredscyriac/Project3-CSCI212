@@ -39,7 +39,35 @@ public class FileMenuHandler implements ActionListener{
             refrigerators.clear();
             dishwashers.clear();
             microwaves.clear();
-
+            try {
+                TextFileInput fileInput = new TextFileInput(filePath);
+                String line;
+                while ((line = fileInput.readLine()) != null) {
+                    String[] parts = line.split(",");
+                    if (parts.length < 3) continue;
+                    String serial = parts[0];
+                    double price = Double.parseDouble(parts[1]);
+                    try {
+                        if (serial.charAt(0) == 'R') {
+                            int cubicFeet = Integer.parseInt(parts[2]);
+                            refrigerators.add(new Refrigerator(serial, price, cubicFeet));
+                        } else if (serial.charAt(0) == 'M') {
+                            int watts = Integer.parseInt(parts[2]);
+                            microwaves.add(new Microwave(serial, price, watts));
+                        } else if (serial.charAt(0) == 'D') {
+                            boolean undercounterInstallation = parts[2].equalsIgnoreCase("Y");
+                            dishwashers.add(new Dishwasher(serial, price, undercounterInstallation));
+                        }
+                    } catch (IllegalApplianceException ex) {
+                        System.out.println("Invalid appliance: " + ex.getMessage());
+                    }
+                }
+                fileInput.close();
+            } 
+            catch (Exception ex) {
+                JOptionPane.showMessageDialog(frame, "Error reading file: " + ex.getMessage(), "File Error", JOptionPane.ERROR_MESSAGE);
+            }
+        }
+        refreshDisplay();
     }
-    
 }
