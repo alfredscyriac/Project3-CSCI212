@@ -11,8 +11,8 @@ public class FileMenuHandler implements ActionListener{
     private JTextArea fridgeArea;
     private JTextArea dishWasherArea;
     private JTextArea microwaveArea;
-    public FileMenuHandler(JFrame frame, SortedApplianceList refrigerators, SortedApplianceList dishwashers, SortedApplianceList microwaves,
-                           JTextArea fridgeArea, JTextArea dishWasherArea, JTextArea microwaveArea) {
+    public FileMenuHandler(JFrame frame, SortedApplianceList refrigerators, SortedApplianceList dishwashers, 
+    SortedApplianceList microwaves, JTextArea fridgeArea, JTextArea dishWasherArea, JTextArea microwaveArea) {
         this.frame = frame;
         this.refrigerators = refrigerators;
         this.dishwashers = dishwashers;
@@ -25,7 +25,8 @@ public class FileMenuHandler implements ActionListener{
         String command = event.getActionCommand();
         if (command.equals("Open")) {
             openFile();
-        } else if (command.equals("Quit")) {
+        } 
+        else if (command.equals("Quit")) {
             System.exit(0);
         }
     }
@@ -42,24 +43,37 @@ public class FileMenuHandler implements ActionListener{
             try {
                 TextFileInput fileInput = new TextFileInput(filePath);
                 String line;
+    
                 while ((line = fileInput.readLine()) != null) {
                     String[] parts = line.split(",");
-                    if (parts.length < 3) continue;
+                    if (parts.length < 3) continue; // Skip malformed lines
+                    
                     String serial = parts[0];
                     double price = Double.parseDouble(parts[1]);
-                    try {
-                        if (serial.charAt(0) == 'R') {
-                            int cubicFeet = Integer.parseInt(parts[2]);
-                            refrigerators.add(new Refrigerator(serial, price, cubicFeet));
-                        } else if (serial.charAt(0) == 'M') {
-                            int watts = Integer.parseInt(parts[2]);
-                            microwaves.add(new Microwave(serial, price, watts));
-                        } else if (serial.charAt(0) == 'D') {
-                            boolean undercounterInstallation = parts[2].equalsIgnoreCase("Y");
-                            dishwashers.add(new Dishwasher(serial, price, undercounterInstallation));
+    
+                    // Use the isValid method for validation
+                    if (Appliance.isValid(serial)) { 
+                        try {
+                            // Process based on appliance type
+                            if (serial.charAt(0) == 'R') {
+                                int cubicFeet = Integer.parseInt(parts[2]);
+                                refrigerators.add(new Refrigerator(serial, price, cubicFeet));
+                            } 
+                            else if (serial.charAt(0) == 'M') {
+                                int watts = Integer.parseInt(parts[2]);
+                                microwaves.add(new Microwave(serial, price, watts));
+                            } 
+                            else if (serial.charAt(0) == 'D') {
+                                boolean undercounterInstallation = parts[2].equalsIgnoreCase("Y");
+                                dishwashers.add(new Dishwasher(serial, price, undercounterInstallation));
+                            }
+                        } 
+                        catch (Exception ex) {
+                            System.out.println("Error adding appliance: " + ex.getMessage());
                         }
-                    } catch (IllegalApplianceException ex) {
-                        System.out.println("Invalid appliance: " + ex.getMessage());
+                    } 
+                    else {
+                        System.out.println("Invalid appliance: Invalid serial number: " + serial);
                     }
                 }
                 fileInput.close();

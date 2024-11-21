@@ -25,8 +25,8 @@ public class ApplianceGUI {
         microwaveArea = new JTextArea();
 
         // Create a FileMenuHandler and pass the initialized components
-        FileMenuHandler fmh = new FileMenuHandler(frame, refrigerators, dishwashers, microwaves,
-                fridgeArea, dishWasherArea, microwaveArea);
+        FileMenuHandler fmh = new FileMenuHandler(frame, refrigerators, dishwashers, microwaves, 
+        fridgeArea, dishWasherArea, microwaveArea);
 
         // Create menu
         JMenuBar menuBar = new JMenuBar();
