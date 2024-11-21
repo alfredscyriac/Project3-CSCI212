@@ -32,5 +32,8 @@ public class ApplianceGUI {
 
         frame.setSize(900, 400);
         frame.setVisible(true);
-    }   
+    } 
+    private void createMenu(JFrame frame) {
+        
+    }  
 }
