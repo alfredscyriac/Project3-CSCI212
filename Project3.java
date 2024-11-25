@@ -1,3 +1,5 @@
+// Author: Alfred Siby Cyriac
+// CSCI212 Lab Section: 121E
 /*
  * This java file is the entry point to this project 
  * To compile the entirety of this project, once navigated inside the directory through the terminal..
