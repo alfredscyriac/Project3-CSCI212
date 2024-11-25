@@ -1,6 +1,9 @@
 import javax.swing.*;
 import java.awt.*;
-
+/*
+ * This class is the graphical user interface which splits the sorted appliance list into three columns 
+ * 
+ */
 public class ApplianceGUI {
     private SortedApplianceList refrigerators;
     private SortedApplianceList dishwashers;
