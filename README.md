@@ -28,8 +28,9 @@ The project includes the following Java files:
 - **IllegalApplianceException.java**: Handles invalid appliance data errors.
 - **ApplianceList.java**, **SortedApplianceList.java**, **ApplianceNode.java**: Implements data structures for managing appliance lists.
 - **ApplianceGUI.java**: The graphical user interface for the application.
+- **FileMenuHandler.java**: Handles menu events triggered by user actions, including file selection and application exit.
 - **TextFileInput.java**: Utility for reading data from text files.
-- **Project3.java**: Entry point for the program, initializes the GUI.
+- **Project3.java**: Entry point for the program, initializes the GUI and sets up the menu.
 
 ## Usage
 
@@ -42,3 +43,6 @@ The project includes the following Java files:
    ```bash
    javac Project3.java
    java Project3
+4. Use the file menu to:
+   - Open a text file containing appliance data.
+   - Exit the program.
