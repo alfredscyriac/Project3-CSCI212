@@ -6,7 +6,7 @@ This project is a Java-based application that reads appliance data from a file, 
 
 ## Features
 
-- Reads appliance serial numbers from a text file.
+- Reads appliance serial numbers from a text file select by the user!
 - Categorizes appliances into specific types:
   - Refrigerator
   - Dishwasher
