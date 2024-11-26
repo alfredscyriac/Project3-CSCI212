@@ -12,6 +12,10 @@ This project is a Java-based application that reads appliance data from a file, 
   - Refrigerator
   - Dishwasher
   - Microwave
+  - Utilizes event-driven programming to handle user interactions via a GUI.
+- Implements a **File Menu** with the following options:
+  - **Open**: Allows the user to select a file for input.
+  - **Exit**: Closes the application.
 - Displays categorized data in a graphical user interface (GUI) with a grid layout.
 - Handles exceptions, such as invalid serial numbers.
 
